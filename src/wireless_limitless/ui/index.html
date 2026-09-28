@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireless Limitless</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-logo" viewBox="0 0 32 32"><path d="M9 7.5a4.5 4.5 0 0 1 4.5 4.5v1.5a2.5 2.5 0 0 1-1.6 2.33V24a2 2 0 0 1-4 0v-8.4A4.5 4.5 0 0 1 9 7.5Z"/><path d="M23 7.5a4.5 4.5 0 0 0-4.5 4.5v1.5a2.5 2.5 0 0 0 1.6 2.33V24a2 2 0 0 0 4 0v-8.4A4.5 4.5 0 0 0 23 7.5Z"/><path d="M3.5 10.5a9 9 0 0 1 1.3-3.7M28.5 10.5a9 9 0 0 0-1.3-3.7" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-touch" viewBox="0 0 24 24"><path d="M9.5 11V5.5a1.75 1.75 0 0 1 3.5 0V11m0-1.5a1.75 1.75 0 0 1 3.5 0v1.25m0 0a1.75 1.75 0 0 1 3.5 0V15a6 6 0 0 1-6 6h-1.2a6 6 0 0 1-4.6-2.15L4.6 16.4a1.8 1.8 0 0 1 2.6-2.5L9.5 16"/><path d="M6.2 5.2a5.5 5.5 0 0 1 9.6 0"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.54V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1.1-1.54 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.54-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.54-1.1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H9a1.7 1.7 0 0 0 1-1.54V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.54 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V9a1.7 1.7 0 0 0 1.54 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.54 1Z"/></symbol>
+  <symbol id="i-anc" viewBox="0 0 24 24"><path d="M12 3.5 5 6v5.2c0 4.3 2.9 8 7 9.3 4.1-1.3 7-5 7-9.3V6z"/><path d="M9 12.2h1.2l1-2.4 1.6 4.8 1-2.4H15"/></symbol>
+  <symbol id="i-ambient" viewBox="0 0 24 24"><path d="M8.5 16.5c0 1.9 1.2 3.5 3 3.5 2.2 0 2.6-2.2 3.5-3.4.8-1.1 2.5-2.3 2.5-5.1a5.5 5.5 0 1 0-11 0"/><path d="M11.5 11.3a1.6 1.6 0 1 1 2.6 1.3c-.8.6-1.1 1.1-1.1 2"/><path d="M3.5 8.5a9 9 0 0 1 2-3.6M2.5 13a9.5 9.5 0 0 0 .6 2.8"/></symbol>
+  <symbol id="i-normal" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8"/></symbol>
+  <symbol id="i-eq" viewBox="0 0 24 24"><path d="M5 20v-6M5 10V4M12 20v-8M12 8V4M19 20v-4M19 12V4M3 14h4M10 8h4M17 16h4"/></symbol>
+  <symbol id="i-game" viewBox="0 0 24 24"><path d="M7 7h10a5 5 0 0 1 4.9 6l-.8 3.9a2.3 2.3 0 0 1-4 1.1L15 16H9l-2.1 2a2.3 2.3 0 0 1-4-1.1L2.1 13A5 5 0 0 1 7 7Z"/><path d="M7.5 10.5v3M6 12h3"/><circle cx="16" cy="11" r=".6"/><circle cx="17.5" cy="13" r=".6"/></symbol>
+  <symbol id="i-find" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8.5 15.5a5 5 0 0 1 0-7M15.5 8.5a5 5 0 0 1 0 7M5.6 18.4a9 9 0 0 1 0-12.8M18.4 5.6a9 9 0 0 1 0 12.8"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.7-4.3L4 8.5M4 4v4.5h4.5M4 13a8 8 0 0 0 14.7 4.3l1.3-1.8M20 20v-4.5h-4.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6z"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 3v8M6.3 6.8a8 8 0 1 0 11.4 0"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M9.5 14.5 14.5 9.5M10.5 6.5l1.4-1.4a4.2 4.2 0 0 1 6 6l-1.4 1.4M13.5 17.5l-1.4 1.4a4.2 4.2 0 0 1-6-6l1.4-1.4"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2.5V6M15 2.5V6M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9.5h3l4.5-4v13L7 14.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 24 24"><path d="M7 9a5 5 0 1 1 10 0c0 3.2-3 4-3 7a3 3 0 0 1-5.4 1.8"/><path d="M10 9.5a2 2 0 1 1 3.6 1.2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7.5 11 12 15.5 16.5 11M5 20h14"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4 2.8 19.5h18.4z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5M4 4v4.5h4.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.7v.3"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+</svg>
+
+<div class="app" id="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <svg class="brand-mark"><use href="#i-logo"/></svg>
+      <div class="brand-name">Wireless Limitless</div>
+    </div>
+
+    <section class="device-card" id="deviceCard" aria-label="이어버드 상태">
+      <div class="device-visual" aria-hidden="true">
+        <svg viewBox="0 0 120 64" class="buds-art">
+          <g class="bud bud-l"><rect x="22" y="8" width="26" height="24" rx="12"/><rect x="31" y="24" width="8" height="30" rx="4"/><circle cx="35" cy="18" r="4" class="bud-mesh"/></g>
+          <g class="bud bud-r"><rect x="72" y="8" width="26" height="24" rx="12"/><rect x="81" y="24" width="8" height="30" rx="4"/><circle cx="85" cy="18" r="4" class="bud-mesh"/></g>
+        </svg>
+      </div>
+      <div class="device-name" id="deviceName">이어버드</div>
+      <div class="device-model" id="deviceModel">&nbsp;</div>
+      <div class="device-status" id="deviceStatus"><span class="dot"></span><span class="status-text" id="statusText">준비 중</span></div>
+
+      <div class="battery-list">
+        <div class="battery" data-side="left"><span class="bat-label">왼쪽</span><div class="bat-bar"><i></i></div><span class="bat-val">--</span><svg class="bat-bolt"><use href="#i-bolt"/></svg></div>
+        <div class="battery" data-side="right"><span class="bat-label">오른쪽</span><div class="bat-bar"><i></i></div><span class="bat-val">--</span><svg class="bat-bolt"><use href="#i-bolt"/></svg></div>
+        <div class="battery" data-side="case" hidden><span class="bat-label">케이스</span><div class="bat-bar"><i></i></div><span class="bat-val">--</span><svg class="bat-bolt"><use href="#i-bolt"/></svg></div>
+      </div>
+
+      <div class="device-actions">
+        <button class="btn soft sm needs-live" id="btnFind" type="button"><svg><use href="#i-find"/></svg>이어버드 찾기</button>
+        <button class="btn soft sm icon-only" id="btnReconnect" type="button" title="다시 연결" aria-label="다시 연결"><svg><use href="#i-refresh"/></svg></button>
+      </div>
+    </section>
+
+    <nav class="nav" aria-label="페이지">
+      <button class="nav-item active" data-page="home" type="button"><svg><use href="#i-home"/></svg><span>홈</span></button>
+      <button class="nav-item" data-page="touch" type="button"><svg><use href="#i-touch"/></svg><span>터치 조작</span></button>
+      <button class="nav-item" data-page="settings" type="button"><svg><use href="#i-settings"/></svg><span>설정</span><i class="nav-badge" id="navUpdateBadge" hidden></i></button>
+    </nav>
+
+    <div class="sidebar-foot"><span id="appVersionFoot">v-</span></div>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="banner" id="statusBanner" hidden>
+      <span class="spinner" aria-hidden="true"></span>
+      <div class="banner-text"><b id="bannerTitle"></b><span id="bannerMsg"></span></div>
+    </div>
+    <div class="banner update" id="updateBanner" hidden>
+      <svg class="banner-ico"><use href="#i-download"/></svg>
+      <div class="banner-text"><b id="updateBannerTitle">새 버전이 있어요</b></div>
+      <button class="btn primary sm" id="btnUpdateBanner" type="button">보기</button>
+      <button class="btn ghost sm icon-only" id="btnUpdateDismiss" type="button" aria-label="닫기"><svg><use href="#i-x"/></svg></button>
+    </div>
+
+    <!-- HOME ------------------------------------------------------------ -->
+    <section class="page active" id="page-home" aria-label="홈">
+      <header class="page-head"><h1>홈</h1></header>
+
+      <div class="home-grid">
+        <article class="card card-anc needs-live">
+          <header class="card-head">
+            <h2><svg><use href="#i-anc"/></svg>소음 제어</h2>
+            <span class="pending" id="ancPending" hidden><span class="spinner"></span>적용 중</span>
+          </header>
+
+          <div class="mode-tiles" id="ancModes" role="radiogroup" aria-label="소음 제어 모드">
+            <button class="mode-tile" data-mode="anc" role="radio" type="button"><span class="tile-ico"><svg><use href="#i-anc"/></svg></span><span>노이즈 캔슬링</span></button>
+            <button class="mode-tile" data-mode="transparency" role="radio" type="button"><span class="tile-ico"><svg><use href="#i-ambient"/></svg></span><span>주변음</span></button>
+            <button class="mode-tile" data-mode="normal" role="radio" type="button"><span class="tile-ico"><svg><use href="#i-normal"/></svg></span><span>일반</span></button>
+          </div>
+
+          <div class="anc-detail" data-for="anc">
+            <div class="chips" id="ancScenes" role="radiogroup" aria-label="노이즈 캔슬링 환경"></div>
+            <div class="level-row" id="ancLevelRow">
+              <span class="field-label">강도</span>
+              <div class="seg" id="ancLevels" role="radiogroup" aria-label="노이즈 캔슬링 강도">
+                <button data-level="1" type="button" role="radio">약</button>
+                <button data-level="2" type="button" role="radio">중</button>
+                <button data-level="3" type="button" role="radio">강</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="anc-detail" data-for="transparency">
+            <label class="row compact">
+              <span class="row-text"><b>음성 강조</b></span>
+              <input type="checkbox" class="switch" id="vocalToggle">
+            </label>
+            <div class="slider-block" id="ambientBlock">
+              <div class="field-label">주변음 레벨 <output id="ambientOut">4</output></div>
+              <input type="range" class="range" min="1" max="6" step="1" value="4" id="ambientRange" aria-label="주변음 레벨">
+            </div>
+          </div>
+
+          <div class="anc-detail" data-for="normal"></div>
+        </article>
+
+        <article class="card card-sound needs-live">
+          <header class="card-head">
+            <h2><svg><use href="#i-eq"/></svg>이퀄라이저</h2>
+          </header>
+          <div class="chips" id="eqPresets" role="radiogroup" aria-label="이퀄라이저 프리셋"></div>
+          <div class="eq-graph" id="eqGraph">
+            <svg id="eqCurve" viewBox="0 0 600 160" preserveAspectRatio="none" aria-hidden="true">
+              <g class="eq-grid"></g><path class="eq-fill"/><path class="eq-line"/>
+            </svg>
+            <div class="eq-axis" aria-hidden="true"><span>20</span><span>100</span><span>1k</span><span>10k</span><span>20k</span></div>
+          </div>
+          <div class="eq-editor" id="eqEditor" hidden>
+            <div class="eq-bands" id="eqBands"></div>
+            <div class="eq-tools"><button class="btn ghost sm" id="eqFlat" type="button"><svg><use href="#i-reset"/></svg>평탄하게</button></div>
+          </div>
+          <div class="divider"></div>
+          <div class="slider-block balance">
+            <div class="field-label">좌우 밸런스 <output id="balanceOut">가운데</output></div>
+            <div class="balance-track">
+              <span>L</span>
+              <input type="range" class="range center" min="0" max="100" step="1" value="50" id="balanceRange" aria-label="좌우 밸런스" title="두 번 클릭하면 가운데로">
+              <span>R</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-quick needs-live">
+          <label class="row big">
+            <span class="row-ico"><svg><use href="#i-game"/></svg></span>
+            <span class="row-text"><b>게임 모드</b><small>소리 지연 줄이기</small></span>
+            <input type="checkbox" class="switch" id="gameToggle">
+          </label>
+        </article>
+      </div>
+    </section>
+
+    <!-- TOUCH ----------------------------------------------------------- -->
+    <section class="page" id="page-touch" aria-label="터치 조작">
+      <header class="page-head"><h1>터치 조작</h1></header>
+      <article class="card touch-card needs-live">
+        <div class="touch-grid" id="touchGrid">
+          <div class="touch-corner"></div>
+          <div class="touch-side"><span class="side-tag">L</span>왼쪽</div>
+          <div class="touch-side"><span class="side-tag">R</span>오른쪽</div>
+          <div class="touch-gesture"><span class="taps"><i></i></span>1번 탭</div>
+          <div class="select-wrap"><select data-slot="1" aria-label="왼쪽 1번 탭"></select></div>
+          <div class="select-wrap"><select data-slot="2" aria-label="오른쪽 1번 탭"></select></div>
+          <div class="touch-gesture"><span class="taps"><i></i><i></i></span>2번 탭</div>
+          <div class="select-wrap"><select data-slot="3" aria-label="왼쪽 2번 탭"></select></div>
+          <div class="select-wrap"><select data-slot="4" aria-label="오른쪽 2번 탭"></select></div>
+          <div class="touch-gesture"><span class="taps"><i></i><i></i><i></i></span>3번 탭</div>
+          <div class="select-wrap"><select data-slot="5" aria-label="왼쪽 3번 탭"></select></div>
+          <div class="select-wrap"><select data-slot="6" aria-label="오른쪽 3번 탭"></select></div>
+        </div>
+        <p class="hint with-ico"><svg><use href="#i-info"/></svg>수면 모드에서는 터치가 잠겨요</p>
+      </article>
+    </section>
+
+    <!-- SETTINGS -------------------------------------------------------- -->
+    <section class="page" id="page-settings" aria-label="설정">
+      <header class="page-head"><h1>설정</h1></header>
+      <div class="settings-grid">
+        <article class="card needs-live">
+          <h2 class="group-title"><svg><use href="#i-ear"/></svg>착용과 조작</h2>
+          <label class="row">
+            <span class="row-text"><b>착용 감지</b><small>빼면 일시정지</small></span>
+            <input type="checkbox" class="switch" id="wearToggle">
+          </label>
+          <label class="row sub" id="ancOnWearRow">
+            <span class="row-text"><b>착용하면 소음 제어 복원</b></span>
+            <input type="checkbox" class="switch" id="ancOnWearToggle">
+          </label>
+          <label class="row">
+            <span class="row-text"><b>수면 모드</b><small>터치 조작 잠금</small></span>
+            <input type="checkbox" class="switch" id="sleepToggle">
+          </label>
+        </article>
+
+        <article class="card needs-live">
+          <h2 class="group-title"><svg><use href="#i-sound"/></svg>알림음 볼륨</h2>
+          <div class="seg full" id="toneSeg" role="radiogroup" aria-label="알림음 볼륨"></div>
+        </article>
+
+        <article class="card needs-live">
+          <h2 class="group-title"><svg><use href="#i-power"/></svg>자동 전원 끄기</h2>
+          <div class="row">
+            <span class="row-text"><b>예약 끄기</b></span>
+            <div class="select-wrap compact"><select id="autoOffSel" aria-label="예약 끄기">
+              <option value="off">사용 안 함</option><option value="15">15분 후</option><option value="30">30분 후</option>
+              <option value="60">60분 후</option><option value="90">90분 후</option><option value="custom">직접 입력</option>
+            </select></div>
+          </div>
+          <div class="row sub" id="autoOffCustomRow" hidden>
+            <span class="row-text"><b>분</b></span>
+            <div class="inline-form"><input type="number" class="input num" id="autoOffCustom" min="1" max="1440" step="1" inputmode="numeric" placeholder="1~1440"><button class="btn soft sm" id="autoOffApply" type="button">적용</button></div>
+          </div>
+          <div class="row">
+            <span class="row-text"><b>연결이 끊기면</b></span>
+            <div class="select-wrap compact"><select id="discOffSel" aria-label="연결이 끊기면 전원 끄기">
+              <option value="5">5분 후 끄기</option><option value="10">10분 후 끄기</option><option value="30">30분 후 끄기</option>
+              <option value="60">60분 후 끄기</option><option value="off">끄지 않기</option>
+            </select></div>
+          </div>
+        </article>
+
+        <article class="card needs-live">
+          <h2 class="group-title"><svg><use href="#i-link"/></svg>연결</h2>
+          <label class="row">
+            <span class="row-text"><b>LDAC 고음질</b><small>휴대폰 전용 코덱</small></span>
+            <input type="checkbox" class="switch" id="ldacToggle">
+          </label>
+          <label class="row">
+            <span class="row-text"><b>듀얼 기기 연결</b></span>
+            <input type="checkbox" class="switch" id="multiToggle">
+          </label>
+        </article>
+
+        <article class="card needs-live">
+          <h2 class="group-title"><svg><use href="#i-chip"/></svg>기기</h2>
+          <div class="inline-form wide">
+            <input type="text" class="input" id="nameInput" maxlength="31" spellcheck="false" autocomplete="off" aria-label="이어버드 이름">
+            <button class="btn soft sm" id="nameSave" type="button">이름 저장</button>
+          </div>
+          <dl class="facts">
+            <div class="wide"><dt>모델</dt><dd id="factModel">-</dd></div>
+            <div><dt>펌웨어</dt><dd id="factFirmware">-</dd></div>
+            <div><dt>주소</dt><dd id="factAddress">-</dd></div>
+          </dl>
+          <p class="hint with-ico"><svg><use href="#i-info"/></svg>펌웨어 업데이트는 QCY 앱에서</p>
+        </article>
+
+        <article class="card" id="appCard">
+          <h2 class="group-title"><svg><use href="#i-download"/></svg>앱</h2>
+          <div class="row">
+            <span class="row-text"><b>버전 <span id="appVersion">-</span></b><small id="updateStatus"></small></span>
+            <button class="btn soft sm" id="btnCheckUpdate" type="button">업데이트 확인</button>
+          </div>
+          <label class="row">
+            <span class="row-text"><b>시작할 때 자동 확인</b></span>
+            <input type="checkbox" class="switch" id="autoUpdateToggle">
+          </label>
+        </article>
+
+        <article class="card danger-zone needs-live">
+          <h2 class="group-title"><svg><use href="#i-warn"/></svg>초기화</h2>
+          <div class="row">
+            <span class="row-text"><b>기본값 복원</b><small>페어링은 유지</small></span>
+            <button class="btn soft sm" id="btnResetDefault" type="button">복원</button>
+          </div>
+          <div class="row">
+            <span class="row-text"><b>공장 초기화</b><small>페어링까지 삭제</small></span>
+            <button class="btn danger sm" id="btnFactoryReset" type="button">초기화</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- MODALS ----------------------------------------------------------------->
+<div class="modal" id="findModal" hidden role="dialog" aria-modal="true" aria-labelledby="findTitle">
+  <div class="modal-card">
+    <div class="find-radar" aria-hidden="true"><i></i><i></i><i></i><svg><use href="#i-find"/></svg></div>
+    <h3 id="findTitle">이어버드 찾기</h3>
+    <p class="modal-text">큰 소리가 나요. <b>귀에서 빼고</b> 사용하세요.</p>
+    <div class="modal-actions">
+      <button class="btn ghost" data-close type="button">닫기</button>
+      <button class="btn primary" id="findToggle" type="button">소리 울리기</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="confirmModal" hidden role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div class="modal-card">
+    <h3 id="confirmTitle"></h3>
+    <p class="modal-text" id="confirmText"></p>
+    <label class="ack" id="confirmAckRow" hidden><input type="checkbox" id="confirmAck"><span id="confirmAckText"></span></label>
+    <div class="modal-actions">
+      <button class="btn ghost" data-close type="button">취소</button>
+      <button class="btn primary" id="confirmOk" type="button">확인</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="updateModal" hidden role="dialog" aria-modal="true" aria-labelledby="updateTitle">
+  <div class="modal-card">
+    <h3 id="updateTitle">새 버전</h3>
+    <p class="modal-text" id="updateLead"></p>
+    <pre class="changelog" id="updateChangelog"></pre>
+    <div class="progress" id="updateProgress" hidden><i></i></div>
+    <div class="modal-actions">
+      <button class="btn ghost" data-close type="button">나중에</button>
+      <button class="btn primary" id="updateApply" type="button">업데이트</button>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

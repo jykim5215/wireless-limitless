@@ -1,0 +1,9 @@
+[project]
+name = "wireless-limitless"
+description = "Windows desktop controller for QCY earbuds (HT08 MeloBuds Pro / Pro Plus)"
+requires-python = ">=3.12"
+dynamic = ["version"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

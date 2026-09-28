@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Build / release outputs
+build/
+dist/
+release/
+*.spec
+
+# Local diagnostics — may contain device addresses
+*.log
+captures/
+live_check_*.txt
+
+# Local Claude Code / agent tooling (contains machine-specific paths)
+.claude/
+skills-lock.json
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
